@@ -1,0 +1,21 @@
+Errors found and corrected on "Boo the Dog" page:
+
+BooTheDog.html :
+- Inconsistent indenting of code
+- Text "Boo The Dog Fan Page!" not wrapped in an <h1> element
+- Text in "About Boo" section not broken up into paragraphs with <p> elements
+- No url in href of "Read more" link
+- Missing <> brackets around img tag for picture of Boo
+- Missing <li> tags around ordered list items in "Favorite Things"
+- id of "textGreen" on Orange button instead of "textOrange"
+- id of "textOrange" on Pink button instead of "textPink"
+- id of "textPink" on Green button instead of "textGreen"
+- <script> tag erroneously linking to "errors.js" instead of "logic.js"
+
+logic.js :
+- booFacts array given 1 string with all facts run together rather than five comma-separated strings
+- Missing quotation marks around "pink" in textPink button logic
+- Missing quotation marks around "click" in boxGrow button logic
+- Missing quotation marks around "click" in boxShrink image button logic
+
+I have also commented out the "Instructions" panel.

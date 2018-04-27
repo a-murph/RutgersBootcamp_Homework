@@ -1,0 +1,53 @@
+UNKNOWN TERMS/TECHNOLOGIES/TOOLS:
+ 1. ColdFusion
+ColdFusion, a product from Macromedia, is a popular and sophisticated set of products for building Web sites and serving pages to users.
+With ColdFusion, a company can build a content database using input templates and combine these with application programs to create a Web site
+in which pages are developed dynamically as they are served. ColdFusion consists of ColdFusion Studio, which is used to build a site, and
+ColdFusion Server, which serves the pages to users. ColdFusion Studio is described as "a complete integrated development environment (IDE)"
+and ColdFusion Server as "a deployment platform."
+
+ 2. FuseBox
+Fusebox is a web application framework for CFML and PHP. Fusebox is intended to be easy to learn and provides benefits by helping developers
+structure their code through a set of simple conventions. Fusebox also allows advanced developers to build large applications, leveraging design
+patterns and object-oriented programming techniques if they wish.
+
+ 3. Visual Basic
+Visual Basic (VB) is a programming environment from Microsoft in which a programmer uses a graphical user interface (GUI) to choose and modify
+preselected sections of code written in the BASIC programming language.
+
+ 4. B2B
+On the Internet, B2B (business-to-business), also known as e-biz, is the exchange of products, services or information (aka e-commerce) between
+businesses, rather than between businesses and consumers.
+
+ 5. Webtrends
+Webtrends is a private company headquartered in Portland, Oregon, United States. It provides digital analytics, optimization and a number of other
+software solutions related to digital marketing. Webtrends offers a variety of web analytics products, services, and solutions which focus on the
+collection and presentation of user behavior data for websites and mobile device applications. The core product, Webtrends Analytics, is available
+in both software and software as a service (SaaS) models.
+
+ 6. LAMP
+LAMP stack is a popular open source web platform commonly used to run dynamic web sites and servers. It includes Linux, Apache, MySQL, and
+PHP/Python/Perl and is considered by many the platform of choice for development and deployment of high performance web applications which require
+a solid and reliable foundation.
+
+ 7. REST
+RESTful web services are built to work best on the Web. Representational State Transfer (REST) is an architectural style that specifies constraints,
+such as the uniform interface, that if applied to a web service induce desirable properties, such as performance, scalability, and modifiability,
+that enable services to work best on the Web. In the REST architectural style, data and functionality are considered resources and are accessed using
+Uniform Resource Identifiers (URIs), typically links on the Web. The resources are acted upon by using a set of simple, well-defined operations.
+The REST architectural style constrains an architecture to a client/server architecture and is designed to use a stateless communication protocol,
+typically HTTP. In the REST architecture style, clients and servers exchange representations of resources by using a standardized interface and
+protocol.
+
+ 8. JAX-RS
+JAX-RS stands for JAVA API for RESTful Web Services. JAX-RS is a JAVA based programming language API and specification to provide support for created
+RESTful Web Services.
+
+ 9. AWS
+Amazon Web Services (AWS) is a comprehensive, evolving cloud computing platform provided by Amazon. It provides a mix of infrastructure as a service
+(IaaS), platform as a service (PaaS) and packaged software as a service (SaaS) offerings.
+
+10. Agile Development
+In software application development, Agile is a methodology that anticipates the need for flexibility and applies a level of pragmatism into the delivery
+of the finished product. Agile requires a cultural shift in many companies because it focuses on the clean delivery of individual pieces or parts of the
+software and not on the entire application. 
