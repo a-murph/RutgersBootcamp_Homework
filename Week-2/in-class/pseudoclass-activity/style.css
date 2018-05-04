@@ -1,0 +1,42 @@
+a {
+	line-height: 2em;
+}
+.firstLink {
+	color: aqua;
+	font-size: 24px;
+}
+.firstLink:hover {
+	background: black;
+}
+.firstLink:active {
+	color: rebeccapurple;
+}
+.firstLink:focus {
+	border: 1px solid darkgray;
+}
+.secondLink {
+	color: black;
+	font-size: 24px;
+}
+.secondLink:hover {
+	background: red;
+}
+.secondLink:active {
+	color: lightcoral;
+}
+.secondLink:focus {
+	border: 2px dashed black;
+}
+.thirdLink {
+	color: red;
+	font-size: 24px;
+}
+.thirdLink:hover {
+	background: yellow;
+}
+.thirdLink:active {
+	color: orange;
+}
+.thirdLink:focus {
+	border: 3px dotted green;
+}
