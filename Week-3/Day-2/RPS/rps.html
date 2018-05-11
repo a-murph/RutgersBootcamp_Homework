@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Rock-Paper-Scissors</h1>
+	<div>Your Wins: <span id="user-wins">0</span></div>
+	<div>CPU Wins: <span id="comp-wins">0</span></div>
+	<div>Ties: <span id="ties">0</span></div>
+	<div>Total Games: <span id="total-games">0</span></div>
+	<h2>Press R, P, or S to play</h1>
+</body>
+<script>
+	var userWins = 0;
+	var compWins = 0;
+	var ties = 0;
+	var games = 0;
+	var userGuess = '';
+	var compGuess = '';
+	var choiceArr = ['r', 'p', 's'];
+
+	var userWinDisplay = document.getElementById("user-wins");
+	var compWinDisplay = document.getElementById("comp-wins");
+	var tieDisplay = document.getElementById("ties");
+	var totalGamesDisplay = document.getElementById("total-games");
+
+	document.onkeyup = function(event) {
+		userGuess = event.key;
+		if (userGuess === 'r' || userGuess === 'p' || userGuess === 's') {
+			compGuess = choiceArr[Math.floor(Math.random()*3)];
+			console.log(userGuess +' ' +compGuess);
+			if (userGuess === compGuess) {
+				alert('You and the CPU tied.');
+				ties++;
+				tieDisplay.textContent = ties;
+			} else if (userGuess === 'r' && compGuess === 'p') {
+				alert('CPU won, it picked paper.');
+				compWins++;
+				compWinDisplay.textContent = compWins;
+			} else if (userGuess === 'r' && compGuess === 's') {
+				alert('You won, CPU picked scissors');
+				userWins++;
+				userWinDisplay.textContent = userWins;
+			} else if (userGuess === 'p' && compGuess === 'r') {
+				alert('You won, CPU picked rock.');
+				userWins++;
+				userWinDisplay.textContent = userWins;
+			} else if (userGuess === 'p' && compGuess === 's') {
+				alert('CPU won, it picked scissors.');
+				compWins++;
+				compWinDisplay.textContent = compWins;
+			} else if (userGuess === 's' && compGuess === 'r') {
+				alert('CPU won, it picked rock.');
+				compWins++;
+				compWinDisplay.textContent = compWins;
+			} else if (userGuess === 's' && compGuess === 'p') {
+				alert('You won, CPU picked paper.');
+				userWins++;
+				userWinDisplay.textContent = userWins;
+			}
+			games++;
+			totalGamesDisplay.textContent = games;
+		}
+	};
+</script>
+</html>
