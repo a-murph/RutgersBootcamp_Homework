@@ -36,34 +36,30 @@
 			if (userGuess === compGuess) {
 				alert('You and the CPU tied.');
 				ties++;
-				tieDisplay.textContent = ties;
 			} else if (userGuess === 'r' && compGuess === 'p') {
 				alert('CPU won, it picked paper.');
 				compWins++;
-				compWinDisplay.textContent = compWins;
 			} else if (userGuess === 'r' && compGuess === 's') {
 				alert('You won, CPU picked scissors');
 				userWins++;
-				userWinDisplay.textContent = userWins;
 			} else if (userGuess === 'p' && compGuess === 'r') {
 				alert('You won, CPU picked rock.');
 				userWins++;
-				userWinDisplay.textContent = userWins;
 			} else if (userGuess === 'p' && compGuess === 's') {
 				alert('CPU won, it picked scissors.');
 				compWins++;
-				compWinDisplay.textContent = compWins;
 			} else if (userGuess === 's' && compGuess === 'r') {
 				alert('CPU won, it picked rock.');
 				compWins++;
-				compWinDisplay.textContent = compWins;
 			} else if (userGuess === 's' && compGuess === 'p') {
 				alert('You won, CPU picked paper.');
 				userWins++;
-				userWinDisplay.textContent = userWins;
-			}
+				userWinDisplay.textContent = userWins			}
 			games++;
 			totalGamesDisplay.textContent = games;
+			tieDisplay.textContent = ties;
+			compWinDisplay.textContent = compWins;
+			userWinDisplay.textContent = userWins;
 		}
 	};
 </script>
