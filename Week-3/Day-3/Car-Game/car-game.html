@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Car Game</title>
+</head>
+<body>
+	<h1>Car Game</h1>
+	<h2>Press 'h' to Honk</h2>
+	<h2>Press 'd' to Drive to Work</h2>
+	<h2>Press 'w' to Drive Around the World</h2>
+	<h2>Press 't' to Get a Tune-Up</h2>
+	<h3>See the console for car stats</h3>
+	<script>
+		var car = {
+			make: "Honda",
+			model: "Fit",
+			color: "Blue Raspberry",
+			mileage: 3000,
+			isWorking: true,
+
+			driveToWork: function() {
+
+			alert("Old Mileage: " + this.mileage);
+
+			this.mileage = this.mileage + 8;
+
+			alert("New mileage: " + this.mileage);
+			},
+
+			driveAroundWorld: function() {
+
+			alert("Old Mileage: " + this.mileage);
+
+			this.mileage = this.mileage + 24000;
+
+			alert("New Mileage: " + this.mileage);
+			alert("Car needs a tuneup!");
+
+			this.isWorking = false;
+			},
+
+			getTuneUp: function() {
+			alert("Car is ready to go!");
+			this.isWorking = true;
+			},
+
+			honk: function() {
+			alert("Honk! Honk!");
+			}
+		};
+
+		function reWriteStats() {
+			console.log("Make: " +car.make +"\nModel: " +car.model +"\nColor: " +car.color +"\nMileage: " +car.mileage +"\nWorking: " +car.isWorking);
+		}
+
+		document.onkeyup = function(event) {
+			if (event.key == 'h') {
+				car.honk();
+				reWriteStats();
+			}
+			else if (event.key == 'd') {
+				car.driveToWork();
+				reWriteStats();
+			}
+			else if (event.key == 'w') {
+				car.driveAroundWorld();
+				reWriteStats();
+			}
+			else if (event.key == 't') {
+				car.getTuneUp();
+				reWriteStats();
+			}
+		}
+	</script>
+</body>
+</html>
