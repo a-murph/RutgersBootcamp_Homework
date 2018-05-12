@@ -57,20 +57,22 @@
 		}
 
 		document.onkeyup = function(event) {
-			if (event.key == 'h') {
-				car.honk();
-				reWriteStats();
-			}
-			else if (event.key == 'd') {
-				car.driveToWork();
-				reWriteStats();
-			}
-			else if (event.key == 'w') {
-				car.driveAroundWorld();
-				reWriteStats();
-			}
-			else if (event.key == 't') {
-				car.getTuneUp();
+			if (event.key === 'h'
+			|| event.key === 'd'
+			|| event.key === 'w'
+			|| event.key === 't') {
+				if (event.key === 'h') {
+					car.honk();
+				}
+				else if (event.key === 'd') {
+					car.driveToWork();
+				}
+				else if (event.key === 'w') {
+					car.driveAroundWorld();
+				}
+				else if (event.key === 't') {
+					car.getTuneUp();
+				}
 				reWriteStats();
 			}
 		}
