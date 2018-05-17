@@ -77,8 +77,8 @@
                 <span class="fa fa-expand"></span> Stretch</button>
             </div>
           </div>
-        </div>
-
+		</div>
+		
         <!-- Controls (Superpower Move Controls) -->
         <div id="moveControls" class="card">
           <h4 class="card-header">Move Controls</h4>
@@ -129,11 +129,11 @@
 
     // Size Buttons
     $("#sizeControls").on("click", ".normal-button", function() {
-      captainPlanet.animate({ height: "300px" });
+      captainPlanet.animate({ height: "300px", width: "450px" });
     }).on("click", ".grow-button", function() {
-      captainPlanet.animate({ height: "500px" });
+      captainPlanet.animate({ height: "500px", width: "750px" });
     }).on("click", ".shrink-button", function() {
-      captainPlanet.animate({ height: "100px" });
+      captainPlanet.animate({ height: "100px", width: "150px" });
     });
 
     // Visibility Buttons
@@ -149,6 +149,13 @@
     $(".invis-button").on("click", function() {
       captainPlanet.animate({ opacity: "0.05" });
     });
+
+	// Stretch Buttons
+	$("#stretchControls").on("click", ".unstretch-btn", function() {
+      captainPlanet.animate({ height: "300px", width: "450px" });
+    }).on("click", ".stretch-btn", function() {
+      captainPlanet.animate({ height: "600px", width: "300px"});
+	});
 
     // Move Buttons
     $("#moveControls").on("click", ".up-button", function() {

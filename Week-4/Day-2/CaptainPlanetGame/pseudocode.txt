@@ -1,0 +1,20 @@
+HTML page
+Use Bootstrap
+Buttons to play and pause music
+Buttons to change size
+Buttons to change visibility
+Buttons to stretch
+Buttons to move
+Image to manipulate with aforementioned buttons
+
+Javacript Code
+Play and Pause music buttons trigger and stop music respectively on click
+Normal Size button sets image size to whatever it is normally on click
+Grow button sets image size to a higher value on click
+Shrink button sets image size to a lower value on click
+Visible button sets image to 100% opacity on click
+Invisible button sets image to very low opacity on click
+Stretch button sets height of image to a higher value without changing width on click
+Normal Stretch button sets height of image to the default value on click
+Move buttons move the image a set number of pixels in the given direciton on click
+Arrow keys also trigger movement
