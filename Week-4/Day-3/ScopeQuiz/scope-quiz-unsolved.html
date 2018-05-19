@@ -17,13 +17,13 @@
     var myVar1 = 1;
 
     function a1() {
-      myVar1 = 5 - 3;
+      myVar1 = 5 - 3; //this changes myVar1's value
       b1();
       alert("Q1 | a: " + myVar1);
     }
 
     function b1() {
-      alert("Q1 | b: " + myVar1);
+      alert("Q1 | b: " + myVar1); //myVar1 is visible to b1 so it gets the changed value
     }
     a1();
 
@@ -33,13 +33,13 @@
     var myVar2 = 1;
 
     function a2() {
-      var myVar2 = 5 - 3;
+      var myVar2 = 5 - 3; //this declares a "new" myVar2 only within a2's scope
       b2();
       alert("Q2 | a: " + myVar2);
     }
 
     function b2() {
-      alert("Q2 | b: " + myVar2);
+      alert("Q2 | b: " + myVar2); //b2 can only see the original myVar2, not the new one
     }
     a2();
 
