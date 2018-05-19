@@ -1,0 +1,13 @@
+- when a number button is clicked, extract the button's text and put it in first-number h1
+	- if there is an operator in the operator h1, put the number in second-number h1
+- when an operator button is clicked, put the button's text in operator h1
+- when equals button is clicked, check if there are two numbers and an operator
+	- if not do nothing
+	- if yes determine what operator was used
+		- if + add the two numbers
+		- if - subtract second-number from first-number
+		- if x multiply the two numbers
+		- if ÷ divide first-number by second-number
+		- if ^ raise first-number to the power of second-number
+			- put the result in result h1
+- when the clear button is clicked, clear first-number, second-number, result, and operator

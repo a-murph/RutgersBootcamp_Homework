@@ -76,7 +76,54 @@ $(document).ready(function() {
 
 // Your code here...
 
+	//setting numbers
+	$(".card-body").on("click", ".number", function() {
+		if ($("#operator").text()) //if there is an operator set
+			//append to the second number
+			$("#second-number").text($("#second-number").text() + $(this).text());
+		else //if there is no operator set
+			//append to the first number
+			$("#first-number").text($("#first-number").text() + $(this).text());
 
+	//setting operators
+	}).on("click", ".operator", function() {
+		if ($("#first-number").text()) //if there is a first number set
+			//set or change the operator
+			$("#operator").text($(this).text());
+		//if there is no first number set, do nothing
+
+	//calculation
+	}).on("click", ".equal", function() {
+		if ($("#first-number").text() && $("#second-number").text() && $("#operator").text()) { //if both numbers and an operator are set
+			//set up variables for calculation
+			var operator = $("#operator").text();
+			var num1 = parseInt($("#first-number").text());
+			var num2 = parseInt($("#second-number").text());
+			var result;
+
+			//check which operator was used and perform the corresponding calculation
+			if (operator == "+")
+				result = num1 + num2;
+			else if (operator == "−")
+				result = num1 - num2;
+			else if (operator == "×")
+				result = num1 * num2;
+			else if (operator == "÷")
+				result = num1 / num2;
+			else if (operator == "^")
+				result = Math.pow(num1, num2);
+			
+			//display result
+			$("#result").text(result);
+		}
+
+	//clear button
+	}).on("click", ".clear", function() {
+		$("#first-number").empty();
+		$("#second-number").empty();
+		$("#operator").empty();
+		$("#result").empty();
+	});
 });
 
 </script>
