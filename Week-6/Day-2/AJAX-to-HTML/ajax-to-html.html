@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Movie Name</th>
+          <th scope="col">Year</th>
+          <th scope="col">Actors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Insert movie rows here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+	
+	function addMovieToTable(movie) {
+		$.ajax({
+			url: "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy",
+			method: "GET"
+		}).then(function (response) {
+			// Obtain a reference to the tbody element in the DOM
+			var tbody = $(".table tbody");
+			// Create and save a reference to new empty table row
+			var newRow = $("<tr>");
+			// Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
+			var tdTitle = $("<td>").text(response.Title);
+			var tdYear = $("<td>").text(response.Year);
+			var tdActors = $("<td>").text(response.Actors);
+			// Append the td elements to the new table row
+			newRow.append(tdTitle);
+			newRow.append(tdYear);
+			newRow.append(tdActors);
+			// Append the table row to the tbody element
+			tbody.append(newRow);
+		});
+	}
+
+	addMovieToTable("Mr. Nobody");
+	addMovieToTable("Spirited Away");
+	addMovieToTable("Pacific Rim");
+	addMovieToTable("The Girl With The Dragon Tattoo");
+
+    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
+  </script>
+</body>
+
+</html>
