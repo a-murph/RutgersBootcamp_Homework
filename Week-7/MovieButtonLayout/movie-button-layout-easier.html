@@ -41,9 +41,13 @@
 
         // Delete the content inside the movies-view div prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
-
+		$("#movies-view").empty();
         // Loop through the array of movies, then generate buttons for each movie in the array
-
+		for (var i = 0; i < movies.length; i++) {
+			var newButton = $("<button>");
+			newButton.text(movies[i]);
+			$("#movies-view").append(newButton);
+		}
       }
 
       // This function handles events where the add movie button is clicked
@@ -54,10 +58,22 @@
         event.preventDefault();
 
         // Write code to grab the text the user types into the input field
-        // Write code to add the new movie into the movies array
+		var movieInput = $("#movie-input").val();
 
-        // The renderButtons function is called, rendering the list of movie buttons
-        renderButtons();
+        // Write code to add the new movie into the movies array
+		var queryURL = "https://www.omdbapi.com/?t=" + movieInput + "&y=&plot=short&apikey=trilogy";
+
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).then(function(response) {
+			console.log(response.Title);
+			movies.push(response.Title);
+			
+			// The renderButtons function is called, rendering the list of movie buttons
+			renderButtons();
+		});
+
       });
 
       // Calling the renderButtons function to display the initial list of movies

@@ -38,7 +38,18 @@
       // Generic function for capturing the movie name from the data-attribute
       function alertMovieName() {
 
-        // YOUR CODE GOES HERE!!!
+		// YOUR CODE GOES HERE!!!
+		
+		movie = $(this).attr("data-name");
+		var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).then(function(response) {
+			console.log(response);
+			
+		});
 
       }
 

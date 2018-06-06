@@ -48,21 +48,43 @@
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function(response) {
+        }).then(function(response) {			
+		  // Creates a div to hold the movie
+		  var movieDiv = $("<div>");
+		  var titleDiv = $("<div>");
+		  titleDiv.text(response.Title);
+		  movieDiv.append(titleDiv);
 
-          // Creates a div to hold the movie
-          // Retrieves the Rating Data
+		  // Retrieves the Rating Data
           // Creates an element to have the rating displayed
-          // Displays the rating
-          // Retrieves the release year
-          // Creates an element to hold the release year
-          // Displays the release year
+		  // Displays the rating
+		  var ratingDiv = $("<div>");
+		  ratingDiv.text(response.Rated);
+		  movieDiv.append(ratingDiv);
+
+		  // Retrieves the release year
+		  // Creates an element to hold the release year
+		  // Displays the release year
+		  var yearDiv = $("<div>");
+		  yearDiv.text(response.Year);
+		  movieDiv.append(yearDiv);
+		  
+		  
           // Retrieves the plot
           // Creates an element to hold the plot
           // Appends the plot
+		  var plotDiv = $("<div>");
+		  plotDiv.text(response.Plot);
+		  movieDiv.append(plotDiv);
+		  
           // Creates an element to hold the image
           // Appends the image
-          // Puts the entire Movie above the previous movies.
+		  var posterImage = $("<img>");
+		  posterImage.attr("src", response.Poster);
+		  movieDiv.append(posterImage);
+
+		  // Puts the entire Movie above the previous movies.
+		  $("#movies-view").prepend(movieDiv);
         });
 
       }

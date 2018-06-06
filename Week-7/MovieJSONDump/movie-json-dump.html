@@ -46,6 +46,17 @@
         // =================================================================
 
         // CODE GOES HERE
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).then(function(response) {
+			console.log(response);
+			$("#movie-view").append("<p>Title: " +response.Title +"</p>");
+			$("#movie-view").append("<p>Year: " +response.Year +"</p>");
+			$("#movie-view").append("<p>Director: " +response.Director +"</p>");
+			$("#movie-view").append("<p>Actors: " +response.Actors +"</p>");
+			$("#movie-view").append("<p>Synopsis: " +response.Plot +"</p>");
+		});
 
         // =================================================================
       });
