@@ -5,24 +5,58 @@ $(document).ready(function () {
         var startYear = $("#start-year").val();
         var endYear = $("#end-year").val();
 
-        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + keyword + "&begin_date=" + startYear + "0101&end_date=" + endYear + "1231&api-key=5f22c86521c340aaad440dea7cbb612f";
-        console.log(queryUrl);
+		if (articleNumber <= 0 || !articleNumber) {
+			articleNumber = 10;
+		}
 
-
-        $.ajax({
+		if (!startYear && !endYear) {
+			var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + keyword +"&api-key=5f22c86521c340aaad440dea7cbb612f";
+			console.log(queryUrl);
+		} else if (!startYear) {
+			var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + keyword +"&end_date=" + endYear + "1231&api-key=5f22c86521c340aaad440dea7cbb612f";
+			console.log(queryUrl);
+		} else if (!endYear) {
+			var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + keyword +"&begin_date=" + startYear + "0101&api-key=5f22c86521c340aaad440dea7cbb612f";
+			console.log(queryUrl);
+		} else {
+			var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + keyword + "&begin_date=" + startYear + "0101&end_date=" + endYear + "1231&api-key=5f22c86521c340aaad440dea7cbb612f";
+			console.log(queryUrl);
+		}
+		
+		$.ajax({
             url: queryUrl,
             method: 'GET',
         }).then(function (response) {
-            console.log(response.response.docs[0].headline.main);
-            console.log(response.response.docs[0].snippet);
-            console.log(response.response.docs[0].web_url);
-            $("#articletitle").text(response.response.docs[0].headline.main);
-            $("#articlesnippet").text(response.response.docs[0].snippet);
-            $("#articlelink").text(response.response.docs[0].web_url);
-        }).fail(function (err) {
-            throw err;
-        });
+			for (var i = 0; i < articleNumber; i++) {
+				var newcard = $("<div>");
+				var cardhead = $("<div>");
+				var cardbody = $("<div>");
+				var snippet = $("<p>");
+				var link = $("<a>");
 
+				$(newcard).addClass("card border-primary mb-3")
+				$(newcard).attr("id", "return");
+				$(cardhead).addClass("card header");
+				$(cardhead).attr("id", "articletitle");
+				$(cardbody).addClass("card-body text-primary");
+				$(snippet).addClass("card-text");
+				$(snippet).attr("id", "articlesnippet");
+				$(link).addClass("card-link");
+				$(link).attr("id", "articlelink");
+				$(link).attr("href", response.response.docs[i].web_url);
 
+				var headline = response.response.docs[i].headline.main;
+				var snippettext = response.response.docs[i].snippet;
+				var articlelinktext = response.response.docs[i].web_url;
+
+				$(cardhead).append(headline);
+				$(snippet).append(snippettext);
+				$(link).append(articlelinktext);
+
+				$(cardbody).append(snippet, link);
+				$(newcard).append(cardhead, cardbody);
+				$("#card-returns").append(newcard);
+			}
+    	});
     });
 });
