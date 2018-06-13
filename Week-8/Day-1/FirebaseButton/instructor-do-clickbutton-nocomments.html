@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Click Button with Firebase!</title>
+
+  <!-- -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <!-- HTML with span for click count -->
+  <h1>Ouch! You've clicked me
+    <span id="click-value"></span> times!</h1>
+
+  <!-- button to click -->
+  <button id="click-button">Click Me!!!!</button>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- ================================================================================== -->
+  <script>
+
+	//firebase configuration
+    var config = {
+      apiKey: "AIzaSyAJS4YQWU5DmESeYueG1qH1NGkjv3DncEY",
+      authDomain: "fir-click-counter-7cdb9.firebaseapp.com",
+      databaseURL: "https://fir-click-counter-7cdb9.firebaseio.com",
+      storageBucket: "fir-click-counter-7cdb9.appspot.com"
+    };
+
+	//initializing database
+    firebase.initializeApp(config);
+
+    // VARIABLES
+    // --------------------------------------------------------------------------------
+
+	//easier reference to database
+    var database = firebase.database();
+
+	//setting up click counter
+    var clickCounter = 0;
+
+    // FUNCTIONS + EVENTS
+    // --------------------------------------------------------------------------------
+
+	//when button is clicked...
+    $("#click-button").on("click", function() {
+	  //increment counter
+      clickCounter++;
+
+	  //update counter in database
+      database.ref().set({
+        clickCount: clickCounter
+      });
+    });
+
+    // MAIN PROCESS + INITIAL CODE
+    // --------------------------------------------------------------------------------
+
+	//when the database updates...
+    database.ref().on("value", function(snapshot) {
+	  //log the new value
+      console.log(snapshot.val());
+
+	  //display the new value in the HTML
+      $("#click-value").text(snapshot.val().clickCount);
+
+	  //set local counter to the new database value
+      clickCounter = snapshot.val().clickCount;
+
+	  //if database call fails...
+    }, function(errorObject) {
+	  //log that it failed
+      console.log("The read failed: " + errorObject.code);
+    });
+
+  </script>
+
+</body>
+
+</html>
