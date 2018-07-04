@@ -11,7 +11,6 @@ if (process.argv.length > 2) {
 		console.log("A classic rock band is " +external.bands.classic);
 	}
 } else {
-	console.log("A punk band is " +external.bands.punk);
-	console.log("A rap group is " +external.bands.rap);
-	console.log("A classic rock band is " +external.bands.classic);
+	for (var key in external.bands)
+	console.log("A " +key +" band is " +external.bands[key]);
 }
