@@ -1,0 +1,29 @@
+server {
+	name: "String",
+	order: {},
+	heldFood: [],
+	seatCustomers: function(){},
+	setTables: function(){},
+	takeOrder: function(){},
+	deliverFood: function(){},
+	checkOnCustomer: function(){},
+	checkOut: function(){}
+}
+
+kitchen {
+	order: {},
+	ingredients: [],
+	cookedFood: [],
+	prepareIngredients(){},
+	cookFood: function(){},
+	washDishes(){}
+}
+
+bartender {
+	order: {},
+	heldDrink: [],
+	mixDrink: function(){},
+	getBottle: function(){},
+	pourTap: function(){},
+	checkOut: function(){}
+}
