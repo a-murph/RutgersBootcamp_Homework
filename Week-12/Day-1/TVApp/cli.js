@@ -30,11 +30,12 @@ if (searchType.toLowerCase() == "show" && searchQuery) {
 
 //search for TV show by title
 function searchShow() {
-	console.log("Searching for show: " +searchQuery);
+	console.log("Searching for show");
 	tv.findShow(searchQuery);
 }
 
 //search for actor by name
 function searchActor() {
-	console.log("Searching for actor: " +searchQuery);
+	console.log("Searching for actor");
+	tv.findActor(searchQuery);
 }

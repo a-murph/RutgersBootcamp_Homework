@@ -12,3 +12,8 @@ Genres: Action, Adventure, Fantasy
 Rating: 8.7
 Network: Nickelodeon
 Summary: <p>Avatar Korra fights to keep Republic City safe from the evil forces of both the physical and spiritual worlds.</p>
+Actor: Tara Strong
+Birthday: 1973-02-12
+Gender: Female
+Country: Canada
+TVMaze URL: http://www.tvmaze.com/people/615/tara-strong
