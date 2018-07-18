@@ -1,0 +1,17 @@
+What the program does:
+ - Takes in a request
+	- 2 arguments:
+		- Keyword to distinguish between show and actor
+			- process.argv[2]
+		- Name of show or actor to search for
+			- Every element in process.argv after 2, concatenated into a searchable string
+ - Searches for the show or actor requested
+	- Use NPM Request module to seach TVMaze API
+		- singlesearch endpoint for shows
+		- people endpoint for actors
+ - Displays results
+	- Step through API response and pull out desired information
+	- console.log information gathered from response
+- Log results to log.txt
+	- Over the course of getting the request and response, build a string of the request and the results
+	- Append this string to log.txt after each request/response
