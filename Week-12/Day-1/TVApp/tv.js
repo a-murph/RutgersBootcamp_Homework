@@ -7,6 +7,9 @@ var TV = function () {
 		var URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
 
 		request(URL, function(error, response, body) {
+			if (error)
+				throw error;
+
 			var result = JSON.parse(body);
 			var formatted = "";
 
@@ -17,7 +20,7 @@ var TV = function () {
 				formatted += "Network: " +result.network.name +"\n";
 			formatted += "Summary: " +result.summary +"\n";
 
-			fs.appendFile("log.txt", formatted, function(error){if (error){throw error;}})
+			fs.appendFile("log.txt", formatted, function(error){if (error) throw error;})
 
 			console.log(formatted);
 		});
