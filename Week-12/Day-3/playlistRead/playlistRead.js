@@ -14,7 +14,7 @@ connection.connect(function(err) {
 	getAllSongs();
 	getGenreSongs("dance");
 	getGenreSongs("classic rock");
-	connection.end();
+	addSongs();
 });
 
 function getAllSongs() {
@@ -33,4 +33,60 @@ function getGenreSongs(genre) {
 		console.log(data);
 		console.log("");
 	});
+}
+
+function addSongs() {
+	var query = connection.query(
+		"INSERT INTO songs SET ?",
+		{
+			title: "Day of the Baphomets",
+			artist: "The Mars Volta",
+			genre: "Prog Rock"
+		},
+		function(err, data) {
+			if (err) throw err;
+			console.log(data.affectedRows +" Insertion Completed");
+			updateSongs();
+		}
+	);
+
+	console.log(query.sql);
+}
+
+function updateSongs() {
+	var query = connection.query(
+		"UPDATE songs SET ? WHERE ?",
+		[
+			{
+				genre: "Progressive Rock"
+			},
+			{
+				title: "Day of the Baphomets"
+			}
+		],
+		function(err, data) {
+			if (err) throw err;
+			console.log(data.affectedRows +" Update Completed");
+			deleteSongs();
+		}
+	);
+
+	console.log(query.sql);
+}
+
+function deleteSongs() {
+	var query = connection.query(
+		"DELETE FROM songs WHERE ?",
+		{
+			title: "Human"
+		},
+		function(err, data) {
+			if (err) throw err;
+			console.log(data.affectedRows +" Deletion Completed");
+			getAllSongs();
+			connection.end();
+		}
+	);
+
+	console.log(query.sql);
 }
