@@ -54,10 +54,9 @@ function postItem() {
 				},
 				function(err, res) {
 					console.log(res.affectedRows +" item inserted\n");
+					connection.end();
 				}
 			);
-			console.log(query.sql);
-			connection.end();
 		});
 	});
 }
@@ -108,6 +107,8 @@ function bidOnItem() {
 										connection.end();
 									}
 								)
+							} else {
+								console.log("Sorry, that bid isn't high enough.");
 							}
 						}
 					)
