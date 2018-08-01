@@ -46,6 +46,16 @@ app.post("/api/clear", function(req, res) {
 	waitlist = [];
 });
 
+app.post("/api/update", function(req, res) {
+	console.log(req.body);
+	reservations.splice(req.body.index, 1);
+	if (waitlist.length != 0) {
+		reservations.push(waitlist[0]);
+		waitlist.shift();
+	}
+	res.send(true);
+});
+
 app.listen(PORT, function() {
 	console.log("Listening on port: " +PORT);
 });
