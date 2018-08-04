@@ -57,11 +57,10 @@ app.get("/all-non-pets", function (req, res) {
 
 	// 3. Send all the animals that are not pets to the index.handlebars file.
 	notPets = [];
-	for (var i = 0; i < animals.length; i++) {
-		if (!animals[i].pet) {
-			notPets.push(animals[i]);
-		}
-	}
+
+	animals.forEach(function(value, index, array) {
+		if (!array[index].pet) notPets.push(array[index]);
+	});
 
 	res.render("index", {
 		animals: notPets
