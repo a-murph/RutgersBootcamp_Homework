@@ -1,0 +1,10 @@
+<ul>
+	{{#each wishes}}
+		<li>{{this.wish}}</li>
+	{{/each}}
+</ul>
+
+<form action="/" method="POST">
+	<input type="text" name="newWish">
+	<input type="submit">
+</form>
