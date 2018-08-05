@@ -1,0 +1,25 @@
+<ul>
+	{{#each movies}}
+		<li>
+			<button name="deleteButton" class="delete-button">Delete</button>
+			{{this.movie}}
+		</li>
+	{{/each}}
+</ul>
+
+<form action="/movies" method="POST">
+	<input type="text" name="newMovie" id="new-movie">
+	<input type="submit" value="Add Movie">
+</form>
+
+<br>
+
+<form action="/movies" method="PUT">
+	<select name="selectMovie" id="select-movie">
+		{{#each movies}}
+			<option value="{{this.id}}">{{this.movie}}</option>
+		{{/each}}
+	</select>
+	<input type="text" name="editMovie" id="edit-movie">
+	<input type="submit" value="Edit Movie">
+</form>
