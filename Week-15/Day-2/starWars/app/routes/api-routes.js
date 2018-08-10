@@ -55,5 +55,12 @@ module.exports = function (app) {
 		//   console.log(data);
 		// });
 
+		character.bulkInsert('roles', [{
+			routeName: req.body.routeName,
+			name: req.body.name,
+			role: req.body.role,
+			age: req.body.age,
+			forcePoints: req.body.forcePoints
+		}]);
 	});
 };
