@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "./components/Form";
+import OmdbContainer from "./components/OmdbContainer";
 
-const App = () => <Form />;
+const App = () => <OmdbContainer />;
 
 export default App;
