@@ -1,6 +1,6 @@
 import React from "react";
-import OmdbContainer from "./components/OmdbContainer";
+import PortfolioContainer from "./components/PortfolioContainer";
 
-const App = () => <OmdbContainer />;
+const App = () => <PortfolioContainer />;
 
 export default App;
